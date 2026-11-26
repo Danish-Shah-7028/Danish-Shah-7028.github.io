@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Danish Shah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE confident student-engineer portfolio, clean and friendly
+   IDEA a night-lit dev workspace: deep violet room, cyan-to-violet light on the things that matter
+   PICTURE round portrait with a glowing ring, and an agent-flow strip showing how I build
+   COLOUR fixed dark world: violet night ground, white cards, cyan #22d3ee to violet #a855f7 accent
+   TYPE Outfit for headings, Inter for text
+   LAYOUT hero text left with portrait right; centred section heads; card grids that collapse to one column on phones */
+:root{color-scheme:dark;--night:#140b2b;--deep:#22104a;--glow:#3b1670;--ink:#f4f1ff;--soft:#c9bfe6;--muted:#9d92c2;--card:#ffffff;--cardink:#1d1533;--cardsoft:#5f5680;--glass:rgba(255,255,255,.06);--edge:rgba(255,255,255,.14);--cyan:#22d3ee;--violet:#a855f7;--grad:linear-gradient(90deg,var(--cyan),var(--violet))}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;color:var(--ink);font:16px/1.65 Inter,system-ui,sans-serif;background:var(--night);background-image:radial-gradient(1100px 700px at 85% -10%,#4a1a86 0%,transparent 60%),radial-gradient(900px 600px at -10% 40%,#2b1260 0%,transparent 60%),radial-gradient(900px 700px at 110% 90%,#3a1470 0%,transparent 60%);background-attachment:fixed;overflow-x:clip}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+a{color:inherit}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:Outfit,Inter,sans-serif;letter-spacing:-.01em;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 max(5vw,16px)}
+section{padding:clamp(56px,8vw,96px) 0}
+.head{text-align:center;max-width:680px;margin:0 auto clamp(32px,4vw,48px)}
+.head h2{font-size:clamp(32px,4.4vw,46px);line-height:1.1;font-weight:700}
+.head p{color:var(--soft);margin:12px 0 0}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.icon{width:20px;height:20px;flex:none}
+nav{position:sticky;top:0;z-index:10;background:rgba(20,11,43,.78);backdrop-filter:blur(12px);border-bottom:1px solid var(--edge)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;flex-wrap:wrap}
+.logo{font:800 24px Outfit,sans-serif;text-decoration:none}
+nav ul{display:flex;flex-wrap:wrap;gap:2px 6px;list-style:none;margin:0;padding:6px 0}
+nav ul a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:var(--soft);font-size:15px;padding:8px 10px;border-radius:8px}
+nav ul a:hover,nav ul a:focus-visible{color:var(--ink);background:var(--glass)}
+nav ul .icon{width:16px;height:16px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.hero{padding-top:clamp(48px,7vw,88px)}
+.hero .intro-row{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr);gap:40px;align-items:center}
+.role{color:var(--cyan);font-weight:600;font-size:15px;margin:0 0 14px}
+.hero h1{font-size:clamp(40px,6vw,66px);line-height:1.04;font-weight:800;text-wrap:balance}
+.hero .intro{color:var(--soft);font-size:clamp(17px,1.5vw,19px);max-width:56ch;margin:20px 0 28px}
+.buttons{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 22px;border-radius:999px;font:600 15px Inter,sans-serif;text-decoration:none;cursor:pointer;border:0}
+.btn.main{background:var(--grad);color:#fff}
+.btn.soft{background:rgba(255,255,255,.1);color:var(--ink);border:1px solid var(--edge)}
+.btn.soft:hover{background:rgba(255,255,255,.16)}
+.btn:hover{filter:brightness(1.1)}
+.social{display:flex;gap:10px;margin-top:26px}
+.social a{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--glass);border:1px solid var(--edge);color:var(--soft)}
+.social a:hover{color:var(--ink);border-color:var(--cyan)}
+.portrait{justify-self:center;position:relative;width:min(340px,80vw);aspect-ratio:1}
+.portrait::before{content:"";position:absolute;inset:-6px;border-radius:50%;background:var(--grad);filter:blur(22px);opacity:.55}
+.portrait img{position:relative;width:100%;height:100%;object-fit:cover;object-position:50% 35%;border-radius:50%;border:5px solid transparent;background:linear-gradient(var(--night),var(--night)) padding-box,var(--grad) border-box}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px;margin-top:clamp(40px,6vw,64px)}
+.fact{background:var(--glass);border:1px solid var(--edge);border-radius:16px;padding:18px 20px}
+.fact b{display:block;font:700 26px Outfit,sans-serif}
+.fact span{color:var(--soft);font-size:14px}
+.light{background:rgba(255,255,255,.025)}
+.courses{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.course{background:var(--card);color:var(--cardink);border-radius:16px;padding:22px 16px;text-align:center}
+.course .badge-icon{width:52px;height:52px;margin:0 auto 12px;border-radius:14px;display:grid;place-items:center;color:#fff;background:var(--grad)}
+.course .badge-icon .icon{width:24px;height:24px}
+.course h3{font-size:18px;color:#7c3aed}
+.course p{margin:4px 0 0;color:var(--cardsoft);font-size:14px;line-height:1.4}
+.skillgroups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.skillgroup{background:var(--card);color:var(--cardink);border-radius:18px;padding:22px}
+.skillgroup header{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.skillgroup header span{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;color:#fff}
+.skillgroup h3{font-size:19px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips li{font-size:14px;padding:4px 12px;border-radius:999px;background:#f1ecff;color:#4c2c8f;font-weight:500}
+.timeline{display:grid;gap:20px;max-width:920px;margin:0 auto}
+.job{background:var(--glass);border:1px solid var(--edge);border-radius:20px;padding:clamp(20px,3vw,30px);position:relative}
+.job .top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;align-items:baseline}
+.job h3{font-size:22px}
+.when{color:var(--cyan);font-weight:600;font-size:15px;white-space:nowrap}
+.where{color:var(--soft);margin:4px 0 14px}
+.job ul,.project ul{margin:0;padding-left:20px;color:#e6e0fa}
+.job li,.project li{margin:6px 0}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0;padding:0;list-style:none}
+.tags li{font-size:13px;padding:3px 11px;border-radius:999px;border:1px solid rgba(34,211,238,.45);color:#bff4fb}
+.highlight{display:inline-block;margin-top:14px;font-size:14px;color:#fff;background:linear-gradient(90deg,rgba(34,211,238,.18),rgba(168,85,247,.22));border:1px solid var(--edge);border-radius:10px;padding:8px 12px}
+.projects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+@media(max-width:1020px){.projects{grid-template-columns:minmax(0,1fr);max-width:640px;margin:0 auto}}
+.project{background:var(--glass);border:1px solid var(--edge);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.cover{aspect-ratio:1400/683;background:#140b2b;border-bottom:1px solid var(--edge)}
+.cover img{display:block;width:100%;height:100%;object-fit:cover}
+.cover{position:relative}
+.cover::after{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(0deg,rgba(10,6,24,.75),transparent);pointer-events:none}
+.links{position:absolute;left:14px;bottom:14px;display:flex;gap:10px;z-index:1}
+.links a{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:9px;font:600 14px Inter,sans-serif;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.3);transition:transform .15s}
+.links a:hover{transform:translateY(-1px)}
+.links .icon{width:16px;height:16px}
+.links .demo{background:var(--cyan);color:#06222a}
+.links .code{background:#fff;color:#14112a}
+.project .body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.project h3{font-size:22px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.project p{color:var(--soft);margin:8px 0 12px}
+.project h4{margin:6px 0 4px;color:var(--cyan);font:600 15px Inter,sans-serif}
+.result{margin:12px 0 4px}
+.bar{display:grid;grid-template-columns:minmax(0,9.5em) minmax(0,1fr) 3em;gap:10px;align-items:center;font-size:14px;color:var(--soft);margin:6px 0}
+.track{height:10px;border-radius:999px;background:rgba(255,255,255,.1);overflow:hidden}
+.fill{height:100%;border-radius:999px;background:rgba(255,255,255,.35)}
+.fill.best{background:var(--grad)}
+.bar b{color:var(--ink);text-align:right}
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px}
+.resume{text-align:center}
+.contact .wrap{display:block}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:8px}
+.tile{position:relative;display:block;background:var(--glass);border:1px solid var(--edge);border-radius:14px;padding:16px 16px 14px;color:var(--ink);text-decoration:none;transition:border-color .2s,background .2s}
+a.tile:hover{border-color:rgba(34,211,238,.55);background:rgba(255,255,255,.09)}
+.tile .icon{width:20px;height:20px;color:var(--cyan)}
+.tile b{display:block;margin-top:14px;font:600 13px Inter,sans-serif;color:var(--muted)}
+.tile span{display:block;margin-top:2px;font-weight:600;font-size:15px;overflow-wrap:anywhere}
+.tile button{position:absolute;top:12px;right:12px;font:600 12px Inter,sans-serif;color:var(--ink);background:rgba(255,255,255,.1);border:1px solid var(--edge);border-radius:8px;padding:5px 10px;cursor:pointer}
+.tile button:hover{background:rgba(255,255,255,.18)}
+.tile span a{color:inherit;text-decoration:none}
+.basedin{display:flex;align-items:center;gap:8px;margin:14px 0 0;color:var(--soft);font-size:14px}
+.basedin .icon{width:16px;height:16px;color:var(--cyan)}
+@media(max-width:820px){.tiles{grid-template-columns:minmax(0,1fr)}}
+footer{border-top:1px solid var(--edge);padding:24px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:center}
+footer .social{margin:0}
+@media(max-width:820px){.hero .intro-row{grid-template-columns:minmax(0,1fr)}.portrait{order:-1;width:min(240px,64vw)}.contact .wrap{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:820px){.courses{grid-template-columns:repeat(2,minmax(0,1fr))}.skillgroups{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){nav ul a span{display:none}nav ul a{padding:10px}.bar{grid-template-columns:minmax(0,1fr) 3em}.bar span{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 5v16" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chip" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z M14 3v5h5M8 13h8M8 17h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M4 9h4v11H4zM6 3.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM10 9h4v1.6c.6-1 1.9-1.9 3.6-1.9 3 0 3.4 2 3.4 4.6V20h-4v-5.6c0-1.3 0-3-1.8-3s-2.2 1.4-2.2 2.9V20h-3z" fill="currentColor"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 2.9.8.1-.7.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z" fill="currentColor"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-kaggle" viewBox="0 0 24 24"><path d="M7 3h3v9.5L15.3 7h3.9l-5.6 5.9L19.6 21h-3.8l-4.4-6.1L10 16.3V21H7z" fill="currentColor"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="7" ry="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 5.5v13c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-13M5 12c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-net" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9s1-6.5 3.5-9z" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-brain" viewBox="0 0 24 24"><path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 3 3h1V4zM15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-3 3h-1V4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 16v-5M12 16V8M16 16v-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-sort" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-2.4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5zM6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="logo grad" href="#home">DS</a>
+    <ul>
+      <li><a href="#home"><svg class="icon"><use href="#i-home"/></svg><span>Home</span></a></li>
+      <li><a href="#coursework"><svg class="icon"><use href="#i-book"/></svg><span>Coursework</span></a></li>
+      <li><a href="#skills"><svg class="icon"><use href="#i-chip"/></svg><span>Skills</span></a></li>
+      <li><a href="#experience"><svg class="icon"><use href="#i-brief"/></svg><span>Experience</span></a></li>
+      <li><a href="#projects"><svg class="icon"><use href="#i-code"/></svg><span>Projects</span></a></li>
+      <li><a href="#resume"><svg class="icon"><use href="#i-file"/></svg><span>Resume</span></a></li>
+      <li><a href="#contact"><svg class="icon"><use href="#i-mail"/></svg><span>Contact</span></a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="wrap intro-row">
+    <div>
+      <p class="role">AI engineer and startup founder</p>
+      <h1>Hi, I'm <span class="grad">Danish Shah</span></h1>
+      <p class="intro">I build AI agents that automate everyday work, from handling a busy inbox to analysing data, using multi-agent LLM systems, retrieval and machine learning.</p>
+      <div class="buttons">
+        <a class="btn main" href="#projects">See my projects</a>
+        <a class="btn soft" href="#contact"><svg class="icon"><use href="#i-mail"/></svg>Contact me</a>
+      </div>
+      <div class="social">
+        <a href="https://github.com/Danish-Shah-7028" aria-label="GitHub"><svg class="icon"><use href="#i-github"/></svg></a>
+        <a href="https://www.linkedin.com/in/danish-shah-a07109364" aria-label="LinkedIn"><svg class="icon"><use href="#i-linkedin"/></svg></a>
+        <a href="https://www.kaggle.com/danishshah04" aria-label="Kaggle"><svg class="icon"><use href="#i-kaggle"/></svg></a>
+        <a href="#contact" aria-label="Email"><svg class="icon"><use href="#i-mail"/></svg></a>
+      </div>
+    </div>
+    <div class="portrait"><img src="img/danish.jpg" alt="Danish Shah" width="371" height="331"></div>
+  </div>
+  <div class="wrap">
+    <div class="facts">
+      <div class="fact"><b class="grad">9.10/10</b><span>CGPA in B.Tech Information Technology</span></div>
+      <div class="fact"><b class="grad">Nirmaan</b><span>Startup selected for IIT Madras pre-incubation</span></div>
+      <div class="fact"><b class="grad">IIT Madras</b><span>BS in Data Science, alongside my B.Tech</span></div>
+      <div class="fact"><b class="grad">16% to 56%</b><span>Task success after adding memory to LLM agents</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="coursework" class="light">
+  <div class="wrap">
+    <div class="head">
+      <h2>Core <span class="grad">coursework</span></h2>
+      <p>The computer science and data science subjects my work stands on.</p>
+    </div>
+    <div class="courses">
+      <div class="course"><div class="badge-icon"><svg class="icon"><use href="#i-sort"/></svg></div><h3>DSA</h3><p>Data structures and algorithms</p></div>
+      <div class="course"><div class="badge-icon"><svg class="icon"><use href="#i-code"/></svg></div><h3>OOP</h3><p>Object-oriented programming</p></div>
+      <div class="course"><div class="badge-icon"><svg class="icon"><use href="#i-layers"/></svg></div><h3>OS</h3><p>Operating systems</p></div>
+      <div class="course"><div class="badge-icon"><svg class="icon"><use href="#i-db"/></svg></div><h3>DBMS</h3><p>Database management systems</p></div>
+      <div class="course"><div class="badge-icon"><svg class="icon"><use href="#i-net"/></svg></div><h3>CN</h3><p>Computer networks</p></div>
+      <div class="course"><div class="badge-icon"><svg class="icon"><use href="#i-chart"/></svg></div><h3>ML</h3><p>Machine learning</p></div>
+      <div class="course"><div class="badge-icon"><svg class="icon"><use href="#i-brain"/></svg></div><h3>Deep learning</h3><p>Deep learning and generative AI</p></div>
+      <div class="course"><div class="badge-icon"><svg class="icon"><use href="#i-chip"/></svg></div><h3>AI</h3><p>Artificial intelligence</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="head">
+      <h2>Skills and <span class="grad">tools</span></h2>
+      <p>What I use to take an idea from a notebook to a working product.</p>
+    </div>
+    <div class="skillgroups">
+      <div class="skillgroup">
+        <header><span style="background:linear-gradient(135deg,#7c3aed,#a855f7)"><svg class="icon"><use href="#i-brain"/></svg></span><h3>AI and machine learning</h3></header>
+        <ul class="chips"><li>PyTorch</li><li>TensorFlow</li><li>scikit-learn</li><li>LangChain</li><li>LangGraph</li><li>CrewAI</li><li>RAG</li><li>OpenCV</li><li>MediaPipe</li></ul>
+      </div>
+      <div class="skillgroup">
+        <header><span style="background:linear-gradient(135deg,#0891b2,#22d3ee)"><svg class="icon"><use href="#i-code"/></svg></span><h3>Programming</h3></header>
+        <ul class="chips"><li>Python</li><li>SQL</li><li>Java</li><li>C++</li><li>JavaScript</li><li>R</li></ul>
+      </div>
+      <div class="skillgroup">
+        <header><span style="background:linear-gradient(135deg,#db2777,#f472b6)"><svg class="icon"><use href="#i-net"/></svg></span><h3>Web and data</h3></header>
+        <ul class="chips"><li>Flask</li><li>Django</li><li>Vue.js</li><li>Tailwind CSS</li><li>REST APIs</li><li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li><li>SQLite</li><li>Supabase</li></ul>
+      </div>
+      <div class="skillgroup">
+        <header><span style="background:linear-gradient(135deg,#ea580c,#fb923c)"><svg class="icon"><use href="#i-tool"/></svg></span><h3>Tools</h3></header>
+        <ul class="chips"><li>Git</li><li>GitHub</li><li>Docker</li><li>n8n</li><li>Playwright</li><li>Jupyter</li><li>Kaggle</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="light">
+  <div class="wrap">
+    <div class="head">
+      <h2>Work <span class="grad">experience</span></h2>
+      <p>Building real products for real users, alongside two degrees.</p>
+    </div>
+    <div class="timeline">
+      <article class="job">
+        <div class="top"><h3>Founder, Cusentra Mail</h3><span class="when">Jan 2026 – present</span></div>
+        <p class="where">Formerly Agentra Mail, an AI email agent on top of Gmail for sales leaders who handle 200+ emails a day</p>
+        <ul>
+          <li>Multi-agent LLM system that categorises, summarises and prioritises incoming email by context and urgency.</li>
+          <li>Retrieval-augmented generation over email history and attachments, so users can ask questions about their inbox.</li>
+          <li>Agents for summaries, calendar actions and human review that draft context-aware replies and pull out tasks.</li>
+          <li>Own email sync engine over IMAP and SMTP, with Google Calendar, Drive, Notion and Slack connected through OAuth.</li>
+          <li>Validated the idea with potential customers and refined the business model.</li>
+        </ul>
+        <span class="highlight">Selected for Pratham, the pre-incubation programme of Nirmaan, IIT Madras, with funding of ₹7 lakh</span>
+        <ul class="tags"><li>Python</li><li>LLMs</li><li>RAG</li><li>Vector databases</li><li>Supabase</li><li>IMAP/SMTP</li><li>OAuth</li></ul>
+      </article>
+      <article class="job">
+        <div class="top"><h3>AI/ML Intern, AyurGenX</h3><span class="when">Jun 2026 – present</span></div>
+        <p class="where">AyurGenX Private Limited, IIT Madras Research Park, Chennai</p>
+        <ul>
+          <li>Built a real-time skin-analysis system that scans the face from 5 angles and scores 9 skin indicators mapped to Ayurvedic concepts.</li>
+          <li>Defined the indicators with Ayurveda doctors and research papers, and added an AI consultation that turns a scan into a personalised report.</li>
+          <li>Tracked 478 facial landmarks with Google MediaPipe to isolate skin regions, running in the browser with nothing to install.</li>
+          <li>Built HBX Solar One, an employee and sales CRM web app for a solar company.</li>
+        </ul>
+        <ul class="tags"><li>Computer vision</li><li>MediaPipe</li><li>OpenCV</li><li>LLMs</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="head">
+      <h2>Featured <span class="grad">projects</span></h2>
+      <p>Things I built to learn, measure and solve real problems.</p>
+    </div>
+    <div class="projects">
+      <article class="project">
+        <div class="cover"><img src="img/datapilot.jpg" alt="Data dashboard with charts on a desktop monitor" loading="lazy"><div class="links"><a class="demo" href="https://datapilot-6fdsioelknyxoshmgu9r3c.streamlit.app/" target="_blank" rel="noopener"><svg class="icon"><use href="#i-ext"/></svg>Live demo</a><a class="code" href="https://github.com/Danish-Shah-7028/DataPilot" target="_blank" rel="noopener"><svg class="icon"><use href="#i-github"/></svg>Code</a></div></div>
+        <div class="body">
+          <h3>DataPilot</h3>
+          <p>A self-correcting data analyst. Ask a question about a CSV or database in plain English and agents plan, write SQL or pandas, run it in a sandbox, check the result and retry when it is wrong.</p>
+          <h4>Key features</h4>
+          <ul>
+            <li>LangGraph workflow with a critic agent that sends failed attempts back for another try.</li>
+            <li>A machine-learning agent that trains and compares scikit-learn models for predictive questions.</li>
+            <li>Benchmarked against a single-call baseline on a public text-to-SQL dataset.</li>
+          </ul>
+          <ul class="tags"><li>LangGraph</li><li>DuckDB</li><li>scikit-learn</li><li>Streamlit</li></ul>
+        </div>
+      </article>
+      <article class="project">
+        <div class="cover"><img src="img/llmstudy.jpg" alt="Person working on a laptop with LLM and AI agent interface overlays" loading="lazy"><div class="links"><a class="code" href="https://github.com/Danish-Shah-7028/Multi-Agent-System-Evaluation" target="_blank" rel="noopener"><svg class="icon"><use href="#i-github"/></svg>Code</a></div></div>
+        <div class="body">
+          <h3>Single, multi-agent and memory-based LLM study</h3>
+          <p>An evaluation framework comparing three LLM system designs on reasoning, planning and coding tasks. Mar – May 2026.</p>
+          <h4>Key features</h4>
+          <ul>
+            <li>Baseline solver, multi-agent pipeline and an agent with memory across tasks, built on the Groq API.</li>
+            <li>Automated semantic-similarity scoring tracking success rate, token use and memory efficiency.</li>
+          </ul>
+          <div class="result" aria-label="Task success rate">
+            <div class="bar"><span>Single agent</span><div class="track"><div class="fill" style="width:16%"></div></div><b>16%</b></div>
+            <div class="bar"><span>With memory</span><div class="track"><div class="fill best" style="width:56%"></div></div><b>56%</b></div>
+          </div>
+          <ul class="tags"><li>Python</li><li>Groq API</li><li>LLM evaluation</li><li>Data analysis</li></ul>
+        </div>
+      </article>
+      <article class="project">
+        <div class="cover"><img src="img/hospital.jpg" alt="CareWell Hospital management system home page with Signup and Login" loading="lazy"><div class="links"><a class="demo" href="https://danishshah07.pythonanywhere.com/" target="_blank" rel="noopener"><svg class="icon"><use href="#i-ext"/></svg>Live demo</a><a class="code" href="https://github.com/Danish-Shah-7028/Hospital-Management-System" target="_blank" rel="noopener"><svg class="icon"><use href="#i-github"/></svg>Code</a></div></div>
+        <div class="body">
+          <h3>Hospital management system with AI chatbot</h3>
+          <p>A role-based web app for patients, doctors and administrators. IIT Madras BS project.</p>
+          <h4>Key features</h4>
+          <ul>
+            <li>Appointment booking, scheduling dashboards and patient records.</li>
+            <li>A TF-IDF chatbot that reads symptoms and suggests the right kind of specialist.</li>
+          </ul>
+          <ul class="tags"><li>Flask</li><li>SQLAlchemy</li><li>SQLite</li><li>Jinja2</li><li>NLP</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="light">
+  <div class="wrap">
+    <div class="head">
+      <h2><span class="grad">Education</span></h2>
+      <p>Two degrees at the same time, one on campus and one online at IIT Madras.</p>
+    </div>
+    <div class="edu">
+      <article class="job">
+        <div class="top"><h3>B.Tech in Information Technology</h3><span class="when">2023 – 2027</span></div>
+        <p class="where">G H Raisoni College of Engineering &amp; Management, Pune (autonomous, affiliated to Savitribai Phule Pune University)</p>
+        <ul><li>CGPA 9.10/10 up to Semester VI.</li><li>Coursework in data structures, algorithms, databases, networks, machine learning and deep learning.</li></ul>
+      </article>
+      <article class="job">
+        <div class="top"><h3>BS in Data Science and Applications</h3><span class="when">2023 – present</span></div>
+        <p class="where">Indian Institute of Technology Madras, online degree</p>
+        <ul><li>Foundation and Diploma levels completed.</li><li>Topped the SQL Wordle Challenge in Saranda House.</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="resume" class="resume">
+  <div class="wrap">
+    <div class="head">
+      <h2>My <span class="grad">resume</span></h2>
+      <p>Education, experience, projects and skills on two pages.</p>
+    </div>
+    <a class="btn main" href="resume.pdf"><svg class="icon"><use href="#i-file"/></svg>Open resume (PDF)</a>
+  </div>
+</section>
+
+<section id="contact" class="contact light">
+  <div class="wrap">
+    <div>
+      <div class="head" style="text-align:left;margin-left:0">
+        <h2>Get in <span class="grad">touch</span></h2>
+        <p>Working on AI agents, data or automation? I would be glad to hear about it.</p>
+      </div>
+      <div class="tiles">
+        <div class="tile"><svg class="icon"><use href="#i-mail"/></svg><b>Email</b><span>danishds7028@gmail.com</span><button type="button" data-copy="danishds7028@gmail.com" aria-label="Copy email address">Copy</button></div>
+        <div class="tile"><svg class="icon"><use href="#i-phone"/></svg><b>Phone</b><span><a href="tel:+917028730307">+91 7028730307</a></span><button type="button" data-copy="+91 7028730307" aria-label="Copy phone number">Copy</button></div>
+        <div class="tile"><svg class="icon"><use href="#i-pin"/></svg><b>Location</b><span>Pune, India</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Danish Shah. Still training, and the loss keeps going down.</span>
+    <div class="social">
+      <a href="https://github.com/Danish-Shah-7028" aria-label="GitHub"><svg class="icon"><use href="#i-github"/></svg></a>
+      <a href="https://www.linkedin.com/in/danish-shah-a07109364" aria-label="LinkedIn"><svg class="icon"><use href="#i-linkedin"/></svg></a>
+      <a href="https://www.kaggle.com/danishshah04" aria-label="Kaggle"><svg class="icon"><use href="#i-kaggle"/></svg></a>
+      <a href="#contact" aria-label="Email"><svg class="icon"><use href="#i-mail"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+{
+  document.querySelectorAll("[data-copy]").forEach(button => {
+    button.addEventListener("click", () => {
+      navigator.clipboard.writeText(button.dataset.copy).then(() => {
+        button.textContent = "Copied";
+        setTimeout(() => { button.textContent = "Copy"; }, 1600);
+      }).catch(() => { button.textContent = "Select it"; });
+    });
+  });
+}
+</script>
+</body>
+</html>
